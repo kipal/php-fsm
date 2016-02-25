@@ -21,6 +21,9 @@ abstract class FSM
 		}
 	}
 
+	/**
+	 * @throw TransitionMethodNotFoundException
+	 */
 	public function __call($name, $arguments)
 	{
 		throw TransitionMethodNotFoundException::getInstance($this, $name);
@@ -30,6 +33,16 @@ abstract class FSM
 	{
 		$methodName = "transitionByState" . ucfirst($this->currentState->toSignature()) . "Input" . ucfirst($i->toSignature());
 
-		$this->$methodName($i);
+		$this->currentState = $this->$methodName($i);
+	}
+
+	/**
+	 * 
+	 * @return State
+	 */
+	public function getCurrentState()
+	{
+
+		return $this->currentState;
 	}
 }

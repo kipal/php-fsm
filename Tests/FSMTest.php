@@ -30,6 +30,11 @@ class TestFSM extends FSM
 	{
 		return new TestState("second");
 	}
+
+	protected function transitionByStateSecondInputSecond(Input $i)
+	{
+		return new TestState("third");
+	}
 }
 
 class TestState implements State
@@ -64,5 +69,15 @@ class FSMTest extends PHPUnit_Framework_TestCase
 		$fsm = new TestFSM();
 
 		$fsm->transition(new TestInput("first"));
+	}
+
+	public function testJumpStateToAnother()
+	{
+		$fsm = new TestFSM();
+
+		$fsm->transition(new TestInput("first"));
+		$fsm->transition(new TestInput("second"));
+
+		$this->assertEquals("third", $fsm->getCurrentState()->toSignature());
 	}
 }
