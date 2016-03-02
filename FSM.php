@@ -5,7 +5,7 @@
  * license that can be found in the LICENSE file.
  */
 
-include "FirstState.php";
+include_once "FirstState.php";
 
 abstract class FSM
 {

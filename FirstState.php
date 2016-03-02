@@ -5,8 +5,7 @@
  * license that can be found in the LICENSE file.
  */
 
-include "State.php";
-
+include_once "State.php";
 
 class FirstState implements State
 {

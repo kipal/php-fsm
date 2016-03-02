@@ -5,6 +5,8 @@
  * license that can be found in the LICENSE file.
  */
 
+include_once "ConvertableToSignature.php";
+
 interface State extends ConvertableToSignature
 {
 }

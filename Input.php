@@ -5,7 +5,7 @@
  * license that can be found in the LICENSE file.
  */
 
-include "ConvertableToSignature.php";
+include_once "ConvertableToSignature.php";
 
 interface Input extends ConvertableToSignature
 {
