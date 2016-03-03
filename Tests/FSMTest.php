@@ -5,9 +5,9 @@
  * license that can be found in the LICENSE file.
  */
 
-include "Input.php";
-include "FSM.php";
-include "TransitionMethodNotFoundException.php";
+include_once "Input.php";
+include_once "FSM.php";
+include_once "TransitionMethodNotFoundException.php";
 
 class TestInput implements Input
 {
