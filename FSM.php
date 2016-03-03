@@ -7,6 +7,7 @@
 
 include_once "FirstState.php";
 include_once "TransitionMethodNotFoundException.php";
+include_once "EmptyCurrentStateException.php";
 
 abstract class FSM
 {
