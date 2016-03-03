@@ -13,7 +13,7 @@ class EmptyCurrentStateException extends Exception
 	public static function getInstance($methodName, Input $input)
 	{
 		return new EmptyCurrentStateException(
-			"Method '$methodName' with '$input->toSignature()' parameter returned null as state."
+			"Method '$methodName' with '" . $input->toSignature() . "' parameter returned null as state."
 		);
 	}
 }
